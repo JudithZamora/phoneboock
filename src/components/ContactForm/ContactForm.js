@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ContactForm = ({ addContact }) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
   const [state, setState] = useState({name: '', number: ''});
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addContact(state);
     
-    setName('');
+    setState('');
     setNumber('');
     
   };
